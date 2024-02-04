@@ -1,4 +1,6 @@
 package ua.lviv.lga.task01;
+import static ua.lviv.lga.task01.VerkhovnaRada.VERKHOVNARADA;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     static void menu() {
         System.out.println();
-        System.out.println(" Введіть 0 : завершити");
+        System.out.println("Введіть 0 : завершити");
         System.out.println("Введіть 1 :  додати фракцію");
         System.out.println("Введіть 2 :  видалити конкретну фракцію");
         System.out.println("Введіть 3 :  вивести усі  фракції");
@@ -35,38 +37,38 @@ public class Main {
                     break;
 
                 case "1":
-                    VerkhovnaRada.VERKHOVNARADA.addFraction();
+                    VERKHOVNARADA.addFraction();
 
                     break;
 
                 case "2":
-                    VerkhovnaRada.VERKHOVNARADA.deleteFraction();
+                    VERKHOVNARADA.deleteFraction();
 
                     break;
 
                 case "3":
-                    VerkhovnaRada.VERKHOVNARADA.schowAllFraction();
+                    VERKHOVNARADA.schowAllFraction();
                     break;
 
                 case "4":
-                    VerkhovnaRada.VERKHOVNARADA.clearСoncreteFraction();
+                    VERKHOVNARADA.clearСoncreteFraction();
                     break;
                 case "5":
-                    VerkhovnaRada.VERKHOVNARADA.schowСoncreteFraction();
+                    VERKHOVNARADA.schowСoncreteFraction();
                     break;
 
                 case "6":
-                    VerkhovnaRada.VERKHOVNARADA.addDeputatToFraction();
+                    VERKHOVNARADA.addDeputatToFraction();
                     break;
                 case "7":
-                    VerkhovnaRada.VERKHOVNARADA.deleteDeputatFromFraction();
+                    VERKHOVNARADA.deleteDeputatFromFraction();
                     break;
 
                 case "8":
-                    VerkhovnaRada.VERKHOVNARADA.schowAllGrafterOfFraction();
+                    VERKHOVNARADA.schowAllGrafterOfFraction();
                     break;
                 case "9":
-                    VerkhovnaRada.VERKHOVNARADA.schowBiggestGrafterOfFraction();
+                    VERKHOVNARADA.schowBiggestGrafterOfFraction();
                     break;
 
             }
