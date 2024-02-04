@@ -45,21 +45,20 @@ public class Fraction {
                 System.out.println("Це нереальний зріст");
             } else {
                 d.setHeight(num);
-
                 System.out.println("Чи бере депутат хабарі (y/no)");
                 st = sc.next().toLowerCase();
                 if (st.equals("y")) {
                     d.setGrafter(true);
                     d.giveGraft();
-                } else d.setGrafter(false);//перевірити, що за замовчуванням
+                } else d.setGrafter(false);
 
                 deputat.add(d);
                 System.out.println("Депутата " + d + " успішно зараховано до фракції");
             }
         }
+        sc.close();
     }
 
-    ;
 
     /*Видалити депутата з фракції*/
     public void deleteDeputat() {
@@ -72,7 +71,7 @@ public class Fraction {
             System.out.println(" \n" + deputat.get(num).getSurname() + "\n успішно видалено. \n");
             deputat.remove(num);
         }
-
+        sc.close();
 
     }
 

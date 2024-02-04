@@ -1,4 +1,5 @@
 package ua.lviv.lga.task01;
+
 import static ua.lviv.lga.task01.VerkhovnaRada.VERKHOVNARADA;
 
 
@@ -74,5 +75,6 @@ public class Main {
             }
 
         }
+        sc.close();
     }
 }

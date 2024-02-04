@@ -32,8 +32,10 @@ public class Deputy extends Human implements Comparable<Deputy> {
             if (sum > 5000) System.out.println("Хабар завеликий. Поліція ув'язнить депутата");
             else setSum(sum);
         }
+        sc.close();
 
     }
+
 
     public String getSurname() {
         return surname;

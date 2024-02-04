@@ -1,5 +1,6 @@
 package ua.lviv.lga.task01;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -57,12 +58,14 @@ public class VerkhovnaRada {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть назву фракції");
         String name = sc.nextLine();
+
+        sc.close();
         return name;
     }
 
 
     public void schowAllFraction() {
-        if (fractia.size() != 0) System.out.println(VerkhovnaRada.VERKHOVNARADA.fractia);
+        if (fractia.size() != 0) System.out.println(VERKHOVNARADA.fractia);
 
         else System.out.println("Ця Верховна рада не має жодної фракції");
 
