@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
     static void menu() {
         System.out.println();
-        System.out.println("Введіть 0 : завершити");
+        System.out.println("Введіть 0 :  завершити");
         System.out.println("Введіть 1 :  додати фракцію");
         System.out.println("Введіть 2 :  видалити конкретну фракцію");
         System.out.println("Введіть 3 :  вивести усі  фракції");

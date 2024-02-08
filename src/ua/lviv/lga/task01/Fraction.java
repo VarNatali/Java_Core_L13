@@ -19,59 +19,44 @@ public class Fraction {
 
     @Override
     public String toString() {
-        return "\n Fraction:  " + fractionName;
+        return "\n Фракція   " + fractionName;
     }
 
     ArrayList<Deputy> deputat = new ArrayList();
 
-    public void addDeputat() {
-        String st;
-        int num = 0;
-        Scanner sc = new Scanner(System.in);
+    public void addDeputatToFraction() {
+        int num = -1;
         Deputy d = new Deputy(0, 0);
-        System.out.println("Введіть прізвище");
-        st = sc.nextLine();
-        d.setSurname(st);
-        System.out.println("Введіть iм'я");
-        d.setName(sc.nextLine());
-        System.out.println("Введіть вік");
-        num = sc.nextInt();
-        if (num < 21) System.out.println("Це занадто юний депутат");
-        else {
-            d.setAge(num);
-            System.out.println("Введіть ріст");
-            num = sc.nextInt();
-            if (num < 100 || num > 200) {
-                System.out.println("Це нереальний зріст");
-            } else {
-                d.setHeight(num);
-                System.out.println("Чи бере депутат хабарі (y/no)");
-                st = sc.next().toLowerCase();
-                if (st.equals("y")) {
-                    d.setGrafter(true);
-                    d.giveGraft();
-                } else d.setGrafter(false);
+        d.addDepyty();
+        num = existDeputatInFraction(d.getSurname(), d.getName());
+        System.out.println("додаємо " + d.getSurname() + d.getName());
+        if (num < 0) {
 
-                deputat.add(d);
-                System.out.println("Депутата " + d + " успішно зараховано до фракції");
-            }
+            deputat.add(d);
+            System.out.println("Депутат " + d + " успішно доданий до фракції");
+        } else {
+            System.out.println("Такий депутат " + d + " вже є у фракції. ");
+            System.out.println("Спробуйте ввести іншого. ");
+
         }
-        sc.close();
     }
 
 
     /*Видалити депутата з фракції*/
     public void deleteDeputat() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введіть прізвище ");
+
+        System.out.println("Введіть прізвище депутата");
         String surname = sc.nextLine();
-        int num = existDeputat(surname);
+        System.out.println("Введіть im'я депутата");
+        String name = sc.nextLine();
+        int num = existDeputatInFraction(surname, name);
 
         if (num >= 0) {
-            System.out.println(" \n" + deputat.get(num).getSurname() + "\n успішно видалено. \n");
+            System.out.println(" \n Депутата  " + deputat.get(num).getSurname() + "\n успішно видалено із фракції. \n");
             deputat.remove(num);
-        }
-        sc.close();
+        } else System.out.println("Такого депутата  немає");
+        //  sc.close();
 
     }
 
@@ -109,15 +94,16 @@ public class Fraction {
 
     }
 
-    /*Перевірка, чи є депутат у фракції*/
-    public int existDeputat(String surname) {
+    /*Перевірка, чи є такий депутат у фракції*/
+    public int existDeputatInFraction(String surname, String name) {
         int num = -1;
         for (int i = 0; i < deputat.size(); i++) {
-            if (deputat.get(i).getSurname().equalsIgnoreCase(surname)) {
+            if (deputat.get(i).getSurname().equalsIgnoreCase(surname) && deputat.get(i).getName().equalsIgnoreCase(name)) {
                 num = i;
+
             }
         }
-        if (num < 0) System.out.println("Депутата з таким прізвищем не знайдено");
+
         return num;
     }
 

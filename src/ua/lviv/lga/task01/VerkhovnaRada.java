@@ -14,6 +14,7 @@ public class VerkhovnaRada {
 
     List<Fraction> fractia = new ArrayList<Fraction>();
 
+
     public void addFraction() {
         String name = getString();
         Fraction fr = new Fraction();
@@ -36,6 +37,8 @@ public class VerkhovnaRada {
             System.out.println("Фракцію успішно видалено.");
             fractia.remove(num);
 
+        } else {
+            System.out.println("Такої фракції ще немає.");
         }
     }
 
@@ -47,9 +50,7 @@ public class VerkhovnaRada {
                 num = i;
             }
         }
-        if (num == -1) {
-            System.out.println("Такої фракції ще немає.");
-        }
+
         return num;
     }
 
@@ -59,7 +60,7 @@ public class VerkhovnaRada {
         System.out.println("Введіть назву фракції");
         String name = sc.nextLine();
 
-        sc.close();
+        //     sc.close();
         return name;
     }
 
@@ -79,6 +80,8 @@ public class VerkhovnaRada {
             int count = fractia.get(num).deputat.size();
             if (count == 0) System.out.println("Ця фракція не має депутатів ");
             else fractia.get(num).clearAllDeputat();
+        } else {
+            System.out.println("Такої фракції ще немає.");
         }
     }
 
@@ -98,7 +101,9 @@ public class VerkhovnaRada {
         String name = getString();
         int num = getNum(name);
         if (num != -1) {
-            fractia.get(num).addDeputat();
+            fractia.get(num).addDeputatToFraction();
+        } else {
+            System.out.println("Такої фракції ще немає.");
         }
 
     }
@@ -108,6 +113,8 @@ public class VerkhovnaRada {
         int num = getNum(name);
         if (num != -1) {
             fractia.get(num).deleteDeputat();
+        } else {
+            System.out.println("Такої фракції ще немає.");
         }
 
     }

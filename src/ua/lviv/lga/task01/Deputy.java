@@ -17,6 +17,46 @@ public class Deputy extends Human implements Comparable<Deputy> {
         this.isGrafter = isGrafter;
     }
 
+    public void addDepyty() {
+        String st;
+        int num = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Введіть прізвище");
+        st = sc.nextLine();
+        this.setSurname(st);
+        System.out.println("Введіть iм'я");
+        this.setName(sc.nextLine());
+        System.out.println("Введіть вік");
+        num = sc.nextInt();
+        while (num < 21) {
+            System.out.println("Це занадто юний депутат");
+            System.out.println("Введіть вік");
+            num = sc.nextInt();
+        }
+        if (num > 21) {
+            this.setAge(num);
+            System.out.println("Введіть ріст");
+            num = sc.nextInt();
+            while (num < 100 || num > 200) {
+                System.out.println("Це нереальний зріст");
+                System.out.println("Введіть ріст");
+                num = sc.nextInt();
+            }
+            this.setHeight(num);
+            System.out.println("Чи бере депутат хабарі (y/n)");
+            st = sc.next().toLowerCase();
+            if (st.equals("y")) {
+                this.setGrafter(true);
+                giveGraft();
+            } else this.setGrafter(false);
+
+
+        }
+
+        // sc.close();
+    }
+
     public Deputy(int weighat, int height) {
         super(weighat, height);
     }
@@ -27,12 +67,15 @@ public class Deputy extends Human implements Comparable<Deputy> {
         if (!this.isGrafter) System.out.println("Цей дерпутат не бере хабаря");
         else {
             System.out.println("Введіть суму хабаря");
-            sc = new Scanner(System.in);
             sum = sc.nextInt();
-            if (sum > 5000) System.out.println("Хабар завеликий. Поліція ув'язнить депутата");
-            else setSum(sum);
+            while (sum >= 5000) {
+                System.out.println("Хабар завеликий. Поліція ув'язнить депутата");
+                System.out.println("Введіть суму хабаря");
+                sum = sc.nextInt();
+            }
+            if (sum < 5000) setSum(sum);
         }
-        sc.close();
+        //    sc.close();
 
     }
 
@@ -79,7 +122,7 @@ public class Deputy extends Human implements Comparable<Deputy> {
 
     @Override
     public String toString() {
-        return " surname " + surname + ", name  " + name + ", age  " + age + ", sum =" + sum;
+        return "  " + surname + " " + name + ", " + age + "років ";
     }
 
 
