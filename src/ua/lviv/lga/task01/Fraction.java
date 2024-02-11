@@ -23,6 +23,7 @@ public class Fraction {
     }
 
     ArrayList<Deputy> deputat = new ArrayList();
+    Scanner sc = new Scanner(System.in);
 
     public void addDeputatToFraction() {
         int num = -1;
@@ -44,8 +45,6 @@ public class Fraction {
 
     /*Видалити депутата з фракції*/
     public void deleteDeputat() {
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("Введіть прізвище депутата");
         String surname = sc.nextLine();
         System.out.println("Введіть im'я депутата");

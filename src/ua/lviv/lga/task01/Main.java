@@ -26,15 +26,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        boolean isWork = true;
 
-        while (isWork) {
+        while (true) {
 
             menu();
 
             switch (sc.next()) {
                 case "0":
-                    isWork = false;
+                    sc.close();
+                    System.exit(0);
                     break;
 
                 case "1":
@@ -75,6 +75,6 @@ public class Main {
             }
 
         }
-        sc.close();
+
     }
 }

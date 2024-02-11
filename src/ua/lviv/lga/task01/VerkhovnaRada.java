@@ -60,7 +60,7 @@ public class VerkhovnaRada {
         System.out.println("Введіть назву фракції");
         String name = sc.nextLine();
 
-        //     sc.close();
+
         return name;
     }
 

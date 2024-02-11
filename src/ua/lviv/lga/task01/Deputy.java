@@ -17,10 +17,11 @@ public class Deputy extends Human implements Comparable<Deputy> {
         this.isGrafter = isGrafter;
     }
 
+    Scanner sc = new Scanner(System.in);
+
     public void addDepyty() {
         String st;
         int num = 0;
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Введіть прізвище");
         st = sc.nextLine();
@@ -62,7 +63,7 @@ public class Deputy extends Human implements Comparable<Deputy> {
     }
 
     public void giveGraft() {
-        Scanner sc = new Scanner(System.in);
+
         int sum = 0;
         if (!this.isGrafter) System.out.println("Цей дерпутат не бере хабаря");
         else {
@@ -75,7 +76,7 @@ public class Deputy extends Human implements Comparable<Deputy> {
             }
             if (sum < 5000) setSum(sum);
         }
-        //    sc.close();
+
 
     }
 
